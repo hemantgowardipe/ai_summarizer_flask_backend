@@ -4,7 +4,7 @@ from summarize import generate_summary
 from utils.pdf_extractor import extract_text_from_pdf
 import os
 
-app = Flask(__name__)
+web: gunicorn app:app
 CORS(app)
 
 @app.route('/api/summarize', methods=['POST'])
